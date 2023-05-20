@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -24,8 +25,8 @@ public class BeijingTime extends HttpServlet {
 
         String pattern = "HH:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        TimeZone.setDefault(TimeZone.getTimeZone("China Standard Time"));
-        Date dataNewZone=new Date();
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+        Date dataNewZone = new Date();
         String time = simpleDateFormat.format(dataNewZone);
 
         resp.setContentType("text/html");

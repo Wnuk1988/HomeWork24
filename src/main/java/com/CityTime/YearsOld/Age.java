@@ -20,9 +20,9 @@ public class Age extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter writer = resp.getWriter();
         int age = Integer.parseInt(req.getParameter("age"));
-        if (age >= 18){
+        if (age >= 18) {
             writer.println("Вы совершеннолетний. Добро пожаловать на сайт!");
-        }else {
+        } else {
             writer.println("Вам нету 18 лет, данный сайт запрещен!!!");
         }
         writer.close();

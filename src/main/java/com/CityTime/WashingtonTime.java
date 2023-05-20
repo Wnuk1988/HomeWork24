@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -21,8 +22,8 @@ public class WashingtonTime extends HttpServlet {
 
         String pattern = "HH:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        TimeZone.setDefault(TimeZone.getTimeZone("Eastern Standard Time"));
-        Date dataNewZone=new Date();
+        TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+        Date dataNewZone = new Date();
         String time = simpleDateFormat.format(dataNewZone);
 
         resp.setContentType("text/html");
