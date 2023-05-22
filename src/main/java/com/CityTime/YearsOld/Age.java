@@ -4,17 +4,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Age extends HttpServlet {
-
-    @Override
-    public void init() throws ServletException {
-        System.out.println("Init method!");
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
@@ -26,10 +19,5 @@ public class Age extends HttpServlet {
             writer.println("Вам нету 18 лет, данный сайт запрещен!!!");
         }
         writer.close();
-    }
-
-    @Override
-    public void destroy() {
-        System.out.println("Destroy method!");
     }
 }
